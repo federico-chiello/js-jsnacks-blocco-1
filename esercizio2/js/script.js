@@ -3,9 +3,12 @@
 var numeri = [];
 
 for(var i = 0; i < 6; i++) {
-  numeri = parseInt(prompt('Inserisci un numero'));
-  if (numeri%2 != 0) {
-    console.log(numeri);
-    document.getElementById('risultato').innerHTML += numeri;
+  var numero = parseInt(prompt('Inserisci un numero'));
+  if (numero%2 != 0) {
+    numeri.push(numero);
   }
 }
+
+console.log(numeri);
+
+document.getElementById('risultato').innerHTML = numeri;
