@@ -16,8 +16,10 @@ var risultatoDue = secondaParola + ' ' + primaParola;
 
 // Condizione
 // stampare prima la parola corta, poi quella lunga.
-if (primaParola > secondaParola) {
-  console.log(risultatoDue);
-} else if (secondaParola > primaParola) {
-  console.log(risultatoUno);
+if (primaParola.length > secondaParola.length) {
+  // console.log(risultatoDue);
+  document.getElementById('risultato').innerHTML = risultatoDue;
+} else if (secondaParola.length > primaParola.length) {
+  // console.log(risultatoUno);
+  document.getElementById('risultato').innerHTML = risultatoUno;
 }
