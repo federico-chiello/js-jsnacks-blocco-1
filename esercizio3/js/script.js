@@ -3,8 +3,11 @@
 
 var i = 0;
 var invitatiFesta = ['Rossi', 'Verdi', 'Bianchi', 'Neri'];
-var esito = 'Non puoi partecipare';
 var utente = prompt('Inserisci il tuo nome');
+var letteraIniziale = utente.charAt(0).toUpperCase();
+var restoNome = utente.substring(1).toLowerCase();
+utente = letteraIniziale + restoNome;
+var esito = 'Non puoi partecipare';
 
 for (i = 0; i < invitatiFesta.length; i++) {
   if (utente == invitatiFesta[i]){
