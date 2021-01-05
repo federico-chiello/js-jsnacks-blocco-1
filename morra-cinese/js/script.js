@@ -2,15 +2,15 @@
 // Realizziamo il gioco della morra cinese in JavaScript. Vince chi totalizza per primo 4 punti.
 
 // Inseriamo le variabili
-var alessandro;
+var utente;
 var computer;
-var punteggioAlessandro = 0;
+var punteggioUtente = 0;
 var punteggioComputer = 0;
 
 // Utilizziamo la condizione for, così stabiliamo la fine del ciclo. Stabiliamo che si giocheranno tre partite.
 for (var i = 0; i < 3; i++) {
-  // il giocatore di nome Riccardo genera numeri random compresi tra 0 e 2.
-  computer = Math.floor(Math.random() * 3);
+  // il computer genera numeri random compresi tra 0 e 2.
+  computer = generaNumeroRandom(0, 2);
 
   if (computer == 0){
     computer = 'carta';
@@ -22,20 +22,20 @@ for (var i = 0; i < 3; i++) {
 
   console.log('Il computer ha scelto '+ computer);
 
-  // il giocatore Alessandro inserisce una delle scelte (carta, forbici o sasso) per giocare contro Riccardo.
-  alessandro = prompt('Inserisci carta, forbici o sasso:')
+  // il giocatore  inserisce una delle scelte (carta, forbici o sasso) per giocare contro il computer.
+  utente = prompt('Inserisci carta, forbici o sasso:')
 
-  if ((alessandro == 'forbici' && computer == 'carta') || (alessandro == 'carta' && computer == 'sasso') || (alessandro == 'sasso' && computer == 'forbici') ) {
-    console.log('Alessandro ha scelto ' + alessandro);
-    console.log('Ha vinto Alessandro!');
-    // se Alessandro vince incrementiamo il suo punteggio.
-    punteggioAlessandro++;
-  } else if (alessandro == computer) {
-    console.log('Alessandro ha scelto ' + alessandro);
+  if ((utente == 'forbici' && computer == 'carta') || (utente == 'carta' && computer == 'sasso') || (utente == 'sasso' && computer == 'forbici') ) {
+    console.log('Il giocatore ha scelto ' + utente);
+    console.log('Ha vinto il giocatore!');
+    // se il giocatore vince incrementiamo il suo punteggio.
+    punteggioUtente++;
+  } else if (utente == computer) {
+    console.log('Il giocatore ha scelto ' + utente);
     // se vengono scelte le stesse opzioni, allora ci sarà pareggio.
     console.log('Parità!');
   } else {
-    console.log('Alessandro ha scelto ' + alessandro);
+    console.log('Il giocatore ha scelto ' + utente);
     console.log('Ha vinto il computer!');
     // se il computer vince incrementiamo il suo punteggio.
     punteggioComputer++;
@@ -43,5 +43,10 @@ for (var i = 0; i < 3; i++) {
 }
 
 
-document.getElementById('giocatore-uno').innerHTML = 'Alessandro ha totalizzato il punteggio di ' + punteggioAlessandro;
+document.getElementById('giocatore-uno').innerHTML = 'Il giocatore ha totalizzato il punteggio di ' + punteggioUtente;
 document.getElementById('giocatore-due').innerHTML = 'Il computer ha totalizzato il punteggio di ' + punteggioComputer;
+
+// Funzioni riutilizzabili
+function generaNumeroRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
