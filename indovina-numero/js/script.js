@@ -12,58 +12,25 @@ switch (livello) {
   // Livello 1 (facile): da 1 a 20
 case "1":
 var computer = generaNumeroRandom(1, 20);
-console.log('Il numero del computer è: ',computer);
-var numeroIndovinato = false;
-var numeriScelti = [];
-
-for (var i = 0; i < 4 && numeroIndovinato == false; i++) {
-  var giocatore = parseInt(prompt('Inserisci un numero compreso tra 1 e 20, hai a disposizione 4 tentativi.'));
-  numeriScelti.push(giocatore);
-  if (giocatore > computer) {
-    alert('Hai sbagliato! Il numero che devi indovinare è più basso.');
-  } else if (giocatore < computer) {
-    alert('Hai sbagliato! Il numero che devi indovinare è più alto.');
-  } else {
-    alert('Complimenti. Hai indovinato il numero!');
-    numeroIndovinato = true;
-  }
-}
-
-console.log('I numeri inseriti dall\'utente sono: ', numeriScelti);
-
+alert('Inserisci un numero compreso tra 1 e 20, hai a disposizione 4 tentativi.');
  break;
   // Livello 2(intermedio): da 1 a 60
 case "2":
 var computer = generaNumeroRandom(1, 60);
-console.log('Il numero del computer è: ',computer);
-var numeroIndovinato = false;
-var numeriScelti = [];
-
-for (var i = 0; i < 4 && numeroIndovinato == false; i++) {
-  var giocatore = parseInt(prompt('Inserisci un numero compreso tra 1 e 60, hai a disposizione 4 tentativi.'));
-  numeriScelti.push(giocatore);
-  if (giocatore > computer) {
-    alert('Hai sbagliato! Il numero che devi indovinare è più basso.');
-  } else if (giocatore < computer) {
-    alert('Hai sbagliato! Il numero che devi indovinare è più alto.');
-  } else {
-    alert('Complimenti. Hai indovinato il numero!');
-    numeroIndovinato = true;
-  }
-}
-
-console.log('I numeri inseriti dall\'utente sono: ', numeriScelti);
-
+alert('Inserisci un numero compreso tra 1 e 60, hai a disposizione 4 tentativi.');
  break;
   // Livello 3(difficile): da 1 a 100
 case "3":
 var computer = generaNumeroRandom(1, 100);
+alert('Inserisci un numero compreso tra 1 e 100, hai a disposizione 4 tentativi.');
+ break;
+}
 console.log('Il numero del computer è: ',computer);
+
 var numeroIndovinato = false;
 var numeriScelti = [];
-
 for (var i = 0; i < 4 && numeroIndovinato == false; i++) {
-  var giocatore = parseInt(prompt('Inserisci un numero compreso tra 1 e 100, hai a disposizione 4 tentativi.'));
+  var giocatore = parseInt(prompt('Inserisci un numero, hai a disposizione 4 tentativi.'));
   numeriScelti.push(giocatore);
   if (giocatore > computer) {
     alert('Hai sbagliato! Il numero che devi indovinare è più basso.');
@@ -74,11 +41,8 @@ for (var i = 0; i < 4 && numeroIndovinato == false; i++) {
     numeroIndovinato = true;
   }
 }
-
 console.log('I numeri inseriti dall\'utente sono: ', numeriScelti);
 
- break;
-}
 
 
 // ***** Metodo senza bonus *****
